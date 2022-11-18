@@ -43,7 +43,7 @@ This method will define our final group length that we will keep when studying t
 
 Then we will create two subgroups which contain the 1st and 2nd most important and repeated pattern across groups. For example: from similarity matrices over the study period, Monday to Friday are very similar (subgroup1) and Saturday to Sunday are also very similar (subgroup2). 
 
-## 2) RQ2: How did it change with covid? 
+### 2) RQ2: How did it change with covid? 
 
 **Method [difference-in-difference]**
 
