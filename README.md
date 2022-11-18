@@ -1,11 +1,13 @@
 ### Did covid make us lose sense of the week ? 
 
 **Note**: In our case “change due to covid”, is actually a “change due to the mobility change caused by covid”. The beginning of the covid period and the beginning of mobility restrictions for each country will be considered to be the same in this paper. 
+
 ## Abstract: 
+
 The whole world suffered the consequences of the covid-19 pandemic. The daily life of people and their habits were changed abruptly by the (mobility restricting) sanitary measures put in place in different countries. Before covid, work and leisure defined the different days of the week, creating a certain pattern, which, as we’ll find out, had a periodicity of a week. Now, the interesting question is whether the covid-19 pandemic made us lose sense of this typical week. In other words, what we want to see is if there was a pattern initially, how did it change during covid. Wikipedia is known to be a relatively good measure of people’s search queries and computers and phones are increasingly defining people’s lives. Wikipedia viewership thus has the potential to enlighten us on the changing habits of people as mobility restrictions due to covid happened. We all have a feeling that our routines changed but can we prove it? And can we quantify it?
 ## Research Questions: 
-RQ1: Are there Wikipedia viewing habits (patterns) during a normal year (year without covid)?
-RQ2: Considering viewing habits vary from work week to weekends (this could be more complex and will be better defined after answering RQ1), did this pattern change during covid? And if so, how?
+- RQ1: Are there Wikipedia viewing habits (patterns) during a normal year (year without covid)?
+- RQ2: Considering viewing habits vary from work week to weekends (this could be more complex and will be better defined after answering RQ1), did this pattern change during covid? And if so, how?
 ## Proposed additional datasets
 We add a new dataframe to the ones we were given, from the csv file date_to_day_2018.csv. This dataframe contains the corresponding week days to all the dates between January, 1st, 2018 to July, 31st, 2020. This allows us to match each date to one of the seven days of the week.
 ## Methods
@@ -16,14 +18,17 @@ We add a new dataframe to the ones we were given, from the csv file date_to_day_
 #### A) Is the week a pattern ? (intuition = yes)
 
 **Method**
+
 Compute ACF (autocorrelation function) on each set (one language, one device) during different periods to find the periodicity. Conclusions at this stage can only be drawn about the periodicity of each period but will need later stages to actually compare pre- and during covid.
 
 #### B) How can it be grouped within the week ? (intuition = workdays/ weekend)
 
 **Method 1 [t-test]**
+
 Proceed with a t-test between each day of the week for the three different periods 2018-S1, 2019-S1, 2020-S1. The null hypothesis is that the two days being compared are similar in terms of pageviews. The results can be shown in a symmetric table with the p-values as coefficients. We use a threshold of 0.05 meaning that if the p-value between two days is below 0.05, we can reject the null hypothesis. This gives us an idea of the days that are quite different from each other. In this way we could create groups for as many days that are different from one another. 
 
 **Method 2 [attention vectors and similarity matrix]**
+
 For this method, we use attentional vectors, the same vectors from the paper provided with the Coronawiki dataset. An attentional vector represents the proportion of page views consultations per topic on a given day.
 
 We call our time window of study the period of study (ex: 6 months). We divide this period of study into time groups (e.g.: month, half-month, three weeks,...)
@@ -50,16 +55,21 @@ For the second regressor, the outcome y is the average similarity value of subgr
 For each regressor, the independent variables are year (2019 or 2020), period (before or after mobility changepoint), language, and device (laptop or phone).
 
 In R notation, the regressor of each equation:
-y ∼ year ∗ period ∗ language ∗ device
-In our case, for each language and each device, inside the equation of this regressors we are interested in the coefficient of interaction between year and period (Beta3*year*period) in the aim to quantify the change of consultations habits (that are represented by subgroups 1 and 2) before and after mobility restriction changepoint by getting rid of seasonality and trends impact.
+y ∼ year x period x language x device
+
+In our case, for each language and each device, inside the equation of this regressors we are interested in the coefficient of interaction between year and period (Beta3 x year x period) in the aim to quantify the change of consultations habits (that are represented by subgroups 1 and 2) before and after mobility restriction changepoint by getting rid of seasonality and trends impact.
+
 ## Proposed timeline
-December 3rd - December 9th: Answer to RQ1
-December 10th - December 16th: Answer to RQ2, begin the website creation
-December 17th - December 23rd: Draw general conclusions and compare for different countries, improve the website
+
+- December 3rd - December 9th: Answer to RQ1
+- December 10th - December 16th: Answer to RQ2, begin the website creation
+- December 17th - December 23rd: Draw general conclusions and compare for different countries, improve the website
+
 ## Organization within the team: 
-T-test: Strengthen them and find ways to extrapolate on the patterns from the results (Estelle, Martim)
-Attention vectors: work on algorithm to find the relevant groupings (Amélie)
-Attention vectors: work on similarity matrix (Alex, Estelle)
-Diff-in-diff (Alex, Amélie, Martim)
-Draw conclusions (Amélie, Alex, Martim, Estelle)
-Create the website (storytelling & visualisation) (Amélie, Alex, Martim, Estelle)
+
+- T-test: Strengthen them and find ways to extrapolate on the patterns from the results (Estelle, Martim)
+- Attention vectors: work on algorithm to find the relevant groupings (Amélie)
+- Attention vectors: work on similarity matrix (Alex, Estelle)
+- Diff-in-diff (Alex, Amélie, Martim)
+- Draw conclusions (Amélie, Alex, Martim, Estelle)
+- Create the website (storytelling & visualisation) (Amélie, Alex, Martim, Estelle)
