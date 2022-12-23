@@ -53,8 +53,7 @@ Then we will create two subgroups which contain the 1st and 2nd most important a
 
 **Method [difference-in-difference]**
 
-Based on observations resulting from RQ1-B, we plan to use the quasi-experimental technique called For the last part of our study, we use a quasi-experimental technique called “difference in differences” with the aim of quantifying the change in consultation habits. We study the effect of a treatment (during mobility restricted period ⇔ after mobility changepoint and in 2020) on a treatment group versus control group. In our design, we assume 2020 without the treatment would have the same behavior as 2019. 
-For our regressor, we set two independent binary variables (0 or 1) as : year (2019 or 2020), after_change (before or after mobility changepoint). We model y as a linear combination of those terms and the periods. 
+Based on observations resulting from RQ1-B, we build for the last part of our study, a quasi-experimental technique called “difference in differences” with the aim of quantifying the change in consultation habits. We study the effect of a treatment (during mobility restricted period ⇔ after mobility changepoint and in 2020) on a treatment group versus control group. In our design, we assume 2020 without the treatment would have the same behavior as 2019. For our regressor, we set two independent binary variables (0 or 1) as : year (2019 or 2020), after_change (before or after mobility changepoint). We model y as a linear combination of those terms and the periods. 
  
 In R formula, our regressor has this equation: y ~ period + year*after_change. 
  
