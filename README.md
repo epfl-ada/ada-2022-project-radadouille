@@ -53,17 +53,12 @@ Then we will create two subgroups which contain the 1st and 2nd most important a
 
 **Method [difference-in-difference]**
 
-Based on observations resulting from RQ1-B, we plan to use the quasi-experimental technique called difference in difference regression with the aim of quantifying the change in consultation habits. In other words, we will study the effect of a treatment (mobility changepoint) on the control group (period of study in 2019) and the treatment group (same period of study but in 2020). Mobility change points will be the same as those used in the paper provided with the Coronawiki dataset.
-
-We plan to build 2 regressors for each country and each device: one regressor where the outcome is the average similarity value of subgroup 1 (the first most important repeated pattern across similarity matrices of each group as described in Part 1.B, Method 2).
-For the second regressor, the outcome y is the average similarity value of subgroup 2.
-
-For each regressor, the independent variables are year (2019 or 2020), period (before or after mobility changepoint), language, and device (laptop or phone).
-
-In R notation, the regressor of each equation:
-y ∼ year x period x language x device
-
-In our case, for each language and each device, inside the equation of this regressors we are interested in the coefficient of interaction between year and period (Beta3 x year x period) in the aim to quantify the change of consultations habits (that are represented by subgroups 1 and 2) before and after mobility restriction changepoint by getting rid of seasonality and trends impact.
+Based on observations resulting from RQ1-B, we plan to use the quasi-experimental technique called For the last part of our study, we use a quasi-experimental technique called “difference in differences” with the aim of quantifying the change in consultation habits. We study the effect of a treatment (during mobility restricted period ⇔ after mobility changepoint and in 2020) on a treatment group versus control group. In our design, we assume 2020 without the treatment would have the same behavior as 2019. 
+For our regressor, we set two independent binary variables (0 or 1) as : year (2019 or 2020), after_change (before or after mobility changepoint). We model y as a linear combination of those terms and the periods. 
+ 
+In R formula, our regressor has this equation: y ~ period + year*after_change. 
+ 
+We are interested in the coefficient of interaction between period and year (B4) because it captures the multiplicative factor by which the distance between the mean weekend attention vector and the mean workweek attention vector increases or decreases as mobility is restricted. Then, we will draw conclusions based on the values of this coefficient and the associated p value.
 
 ## Proposed timeline
 
