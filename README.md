@@ -2,6 +2,8 @@
 
 **Note**: In our case “change due to covid”, is actually a “change due to the mobility change caused by covid”. The beginning of the covid period and the beginning of mobility restrictions for each country will be considered to be the same in this paper. 
 
+**You can find our datastory by clicking on the following link: https://esteller74.github.io/Website_2/.**
+
 ## Abstract: 
 
 The whole world suffered the consequences of the covid-19 pandemic. The daily life of people and their habits were changed abruptly by the (mobility restricting) sanitary measures put in place in different countries. Before covid, work and leisure defined the different days of the week, creating a certain pattern, which, as we’ll find out, had a periodicity of a week. Now, the interesting question is whether the covid-19 pandemic made us lose sense of this typical week. In other words, what we want to see is if there was a pattern initially, how did it change during covid. Wikipedia is known to be a relatively good measure of people’s search queries and computers and phones are increasingly defining people’s lives. Wikipedia viewership thus has the potential to enlighten us on the changing habits of people as mobility restrictions due to covid happened. We all have a feeling that our routines changed but can we prove it? And can we quantify it?
@@ -67,9 +69,9 @@ In our case, for each language and each device, inside the equation of this regr
 
 ## Organization within the team: 
 
-- T-test: Strengthen them and find ways to extrapolate on the patterns from the results (Estelle, Martim)
-- Attention vectors: work on algorithm to find the relevant groupings (Amélie)
-- Attention vectors: work on similarity matrix (Alex, Estelle)
-- Diff-in-diff (Alex, Amélie, Martim)
-- Draw conclusions (Amélie, Alex, Martim, Estelle)
-- Create the website (storytelling & visualisation) (Amélie, Alex, Martim, Estelle)
+- T-test: Strengthen them and find ways to extrapolate on the patterns from the results (Estelle, Amélie)
+- Attention vectors: work on algorithm to find the relevant groupings and on similarity matrix (Alex, Martim)
+- Diff-in-diff (Alex, Martim)
+- Draw conclusions (Amélie)
+- Create the website (storytelling & visualization) (Estelle)
+
