@@ -7,6 +7,10 @@
 ## Abstract: 
 
 The whole world suffered the consequences of the covid-19 pandemic. The daily life of people and their habits were changed abruptly by the (mobility restricting) sanitary measures put in place in different countries. Before covid, work and leisure defined the different days of the week, creating a certain pattern, which, as we’ll find out, had a periodicity of a week. Now, the interesting question is whether the covid-19 pandemic made us lose sense of this typical week. In other words, what we want to see is if there was a pattern initially, how did it change during covid. Wikipedia is known to be a relatively good measure of people’s search queries and computers and phones are increasingly defining people’s lives. Wikipedia viewership thus has the potential to enlighten us on the changing habits of people as mobility restrictions due to covid happened. We all have a feeling that our routines changed but can we prove it? And can we quantify it?
+
+Our project follows the following pipeline: 
+![pipeline](pipeline.png "Project pipeline")
+
 ## Research Questions: 
 - RQ1: Are there Wikipedia viewing habits (patterns) during a normal year (year without covid)?
 - RQ2: Considering viewing habits vary from work week to weekends (this could be more complex and will be better defined after answering RQ1), did this pattern change during covid? And if so, how?
